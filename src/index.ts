@@ -15,7 +15,7 @@ type colorProperties = {
 }
 
 // テスト用データ
-// const isSearchColorLight: boolean = true
+// const isSearchColorLight: boolean = false;
 // const queryColor: rgbColor = {r:26,g:140,b:90}
 // var testColors: rgbColor[] = [
 //   {r:204,g:20,b:20},
@@ -34,7 +34,7 @@ type colorProperties = {
 // 以下、カラーパレット増えた場合の将来実装：
 // 当該関数を全てのカラーパレット/メインカラーについて行うと重くなってしまうので、事前にカラーパレット/メインカラーを何種類かの色グループに分け、
 // queryColorがどれらの色グループに所属するのかという判定を行い、当該色グループに含まれるカラーパレットをtargetColorsとする処理が必要になる
-function colorSimilarityCalcAndSort(queryColor: rgbColor, targetColors: rgbColor[], isSearchColorLight: true):colorProperties[]{
+function colorSimilarityCalcAndSort(queryColor: rgbColor, targetColors: rgbColor[], isSearchColorLight: boolean):colorProperties[]{
   const descendingSimilarColorList: colorProperties[] = []
     for (var i=1;i<= targetColors.length;i++){
       // 濃淡による場合分け
@@ -64,4 +64,4 @@ function isColorLight(color: rgbColor):boolean {
   }
 }
 
-console.log(colorSimilarityCalcAndSort(queryColor, testColors, isSearchColorLight))
+// console.log(colorSimilarityCalcAndSort(queryColor, testColors, isSearchColorLight))
